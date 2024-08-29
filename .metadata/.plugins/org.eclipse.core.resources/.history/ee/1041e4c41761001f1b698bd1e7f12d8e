@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ul{
+	padding: 0;
+	margin: 0;
+	width: 670px;
+	list-style: none;
+}
+li {
+	float: left;
+}
+ul:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+img {
+    border: none;
+}
+</style>
+</head>
+
+<body>
+	<ul>
+		<li>
+			<a href="#"> <img alt="jQuery" src="../img/img2/jquery.jpg"> </a>
+		</li>
+		<li>
+			<a href="#"> <img alt="javascript" src="../img/img2/javascript.jpg"> </a>
+		</li>
+		<li>
+			<a href="#"> <img alt="css" src="../img/img2/css.jpg"> </a>
+		</li>
+		<li>
+			<a href="#"> <img alt="html" src="../img/img2/html.jpg"> </a>
+		</li>
+	</ul>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('img').mouseover(function() {
+		let alt = $(this).attr('alt')
+		console.log(alt);
+		$(this).prop('src', '../img/img2/'+alt+'_on.jpg');
+	});
+
+});
+</script>
+</html>
+
+
+ 

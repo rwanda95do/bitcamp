@@ -1,0 +1,56 @@
+<!-- 동적요소 사이트 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<input type="button" value="추가">
+	<input type="button" value="삭제">
+	
+	<ul>
+		<li></li>
+	</ul>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	let i=1;
+	$('input:eq(0)').click(function() {
+		let li1 = $('<li>').css('color', 'red').html('추가'+(i++));  // <li>태그 생성
+		let li2 = $('<li>').css('color', 'green').html('추가'+(i++));  // <li>태그 생성
+		let li3 = $('<li>').css('color', 'blue').html('추가'+(i++));  // <li>태그 생성
+		$('ul').append(li1);
+		$('ul').append(li2);
+		$(li3).appendTo('ul');
+	});
+	
+	
+	$('input:eq(1)').click(function() {
+		$('ul').empty();		// 싹 ㅂㅣ움
+	});
+})
+</script>
+</html>
+
+
+<!--
+A.append(B) => A에 B를 추가한다.
+B.appendTo(A) => B를 A에 추가한다
+  -->
+
+<!-- 
+$().css('display')
+=> display 속성은 요소를 어떻게 보여줄지를 결정한다
+
+① none : 보이지 않음
+② block
+③ inline
+④ inline-block
+ -->
+
+ 

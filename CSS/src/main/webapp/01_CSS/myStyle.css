@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body {
+	background:  pink;
+	color: blueviolet;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+h3 {
+	text-align: center;
+	color: darkred;
+}
+p {
+	font-size: 10px;
+}

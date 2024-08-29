@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+
+
+<%!
+// 전역변수
+	int num = 3;
+%>
+
+<%
+// java
+
+	String writer = request.getParameter("writer");
+	String content = request.getParameter("content");
+	
+	num++;
+%>

@@ -1,0 +1,36 @@
+$(function(){
+	
+	$('#join').submit(function(){
+		
+		// 아이디 입력이 안되었을 때
+		let user_id = $('input[name="user_id"]').val();
+		if(!user_id){		//if( user_id=='')
+			alert("아이디를 입력하세요");
+			$('input[name="user_id"]').focus();		// 유효성 검사호 포커스 맞추기
+			return false;
+		}
+		
+		// 비밀번호 입력이 안되었을 때
+		let user_pw = $('input[name="user_pw"]').val();
+		if( user_pw==''){	// if(!user_pw)
+			alert("비밀번호를 입력하세요");
+			$('input[name="user_pw"]').focus();		
+			return false;
+		}
+		
+		// 성별 입력이 안되었을 때
+		// radio는 선택되면 true, 안되었으면 flase
+		if(!$('input[name=gender]').is(':checked')){
+			alert("성별를 입력하세요");
+		}
+		
+		
+		
+		
+		
+		
+		
+		return false;		// 가야할 페이지가 없기 때문에 페이지 이동 막기
+	});
+	
+});

@@ -1,0 +1,48 @@
+<!-- 가장 많이 쓰는 형식 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1 id="hello"></h1>
+	<p id="text">안녕하세요 제이쿼리!</p>
+	
+	
+<!-- JQuery 방법1. CDN -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var h1 = $('#hello')
+	
+	h1.html('hello jquery') //<h1 id="hello" style="color: red;"></h1>
+	h1.css('color', 'red')
+	
+	
+	h1.text('hello jquery')   // 값을 넣기
+	alert($('#text').text())  // 값을 꺼내오기
+	
+});
+</script>
+</body>
+</html>
+
+
+
+<!-- 
+	1. $ 객체는 제이쿼리 문서 객체 선택자의 메소드를 나타낸다. 
+	2. $ 객체에 익명함수를 사용하면 <body> 영역의 문서를 모두 로딩한 후에, 제이쿼리를 실행하라는 의미이다.
+	
+	$(document).ready(function(){});
+	$(function(){});
+	
+	
+ -->
+
+ 
+ 
+ 
+ 

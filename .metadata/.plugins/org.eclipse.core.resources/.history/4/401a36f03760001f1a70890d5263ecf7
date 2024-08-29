@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- JQuery 방법1. CDN -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	// 익명함수+객체
+	jQuery(function($) {
+		var h1 = $('hello')
+		h1.html('hello jquery')
+	
+	});
+</script>
+
+</head>
+<body>
+	<h1 id="hello"></h1>
+</body>
+</html>

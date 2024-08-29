@@ -1,0 +1,64 @@
+<!-- 아되네;; -->
+<!-- 댓글 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div id="demo2">
+		<button>add</button>
+		<ul>
+			<li>test1</li>
+			<li>test2</li>
+			<li>test3</li>
+		</ul>
+	</div>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#demo2 li').bind('click', function() {
+		alert($(this).text());
+		
+	});
+	
+	/* 
+	//이걸로 하면 안됨 
+	// 이벤트가 처음에 있던 li만 먹는다 -> 동적으로 생성된 아이들은 이벤트가 안먹힘;;;
+	$('button').bind('click', function() {
+		$('ul').append('<li>added</li>');		
+	});
+	*/
+	
+	$('button').bind('click', function() {
+		$('li').unbind('click');
+		$('ul').append('<li>added</li>').find();
+	});
+	
+	/*
+	// 이건 너무 복잡해  => on
+	$('#demo2 button').bind('click', function() {
+		$('#demo2 li').unbild('click');
+		$('#demo2 ul').append('<li>added</li>').find($('li')).click(function() {
+			alert($(this).text())
+		})
+	})
+	*/
+});
+</script>
+</html>
+
+
+
+<!--  
+bind가 deprecated 되었으므로 비추천, 대신해서 on으로 사용
+bind로 연결된 이벤트는 unbind()로 제거하고, on으로 연결된 이벤트는 off로 제거한다
+
+-->

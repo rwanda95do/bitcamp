@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- JQuery 방법1. CDN -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+
+	function hello() {
+		var h1 = document.getElementById('hello')
+		alert(h1.tagName)
+		
+		h1.innerHTML = 'Hello JQuery';
+	}
+	/* 
+	// javascipt onload
+	window.onload = function () {
+		hello()
+	}
+	*/
+	
+	// JQuery : javacript의 onload이벤트와 같은 효과
+	jQuery(hello);
+</script>
+
+<!-- JQuery 방법2. JS파일 다운로드 -->
+<!-- 
+	<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+ -->
+</head>
+<body>
+	<h1 id="hello"></h1>
+</body>
+</html>
