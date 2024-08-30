@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Layout</title>
+<style>
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.left, .right {
+	flex: 2; /* 두 영역을 동일하게 나눕니다 */
+	height: 100%;
+}
+
+.left {
+	background-color: #f8b400;
+	overflow: hidden;
+}
+.left img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+}
+
+
+.right {
+	background-color: #009688;
+}
+
+</style>
+</head>
+<body>
+	<div class="left">
+		<img alt="" src="../image/login01.jpg">
+	</div>
+	
+	<!--  -->
+	<div class="right">
+		<div class="user-forms">
+				<div class="centered-container">
+					<h2 id="select-form">
+						<span class="selected-login" data-user-form="user-login">User
+							Login</span> or <span data-user-form="user-regist">User
+							Registration</span>
+					</h2>
+					<div class="user-login user-form">
+						<form id="user-login">
+							<label for="user-name">User Name</label> <input type="text"
+								id="user-name" placeholder="Enter User Name" /> <label
+								for="user-pass">User Password</label> <input type="password"
+								id="user-pass" placeholder="Enter Password" />
+							<button class="submit-btn">LOGIN</button>
+							<a href="#" class="misc-links">Forgot Password?</a>
+						</form>
+					</div>
+					<div class="user-regist user-form">
+						<form id="user-regist">
+							<label for="regist-name">Name</label> <input type="text"
+								id="regist-name" placeholder="Enter Name" /> <label
+								for="regist-usr">User Name</label> <input type="text"
+								id="regist-usr" placeholder="Enter Username" /> <label
+								for="regist-email">Email</label> <input type="email"
+								id="regist-email" placeholder="Enter Email" /> <label
+								for="regist-pass">Password</label> <input type="password"
+								id="regist-pass" placeholder="Enter New Password" /> <input
+								type="checkbox" id="understood-terms" /> <label
+								for="understood-terms" class="inline-label">I understood
+								and agree with the terms and conditions.</label> <br />
+							<br />
+							<br />
+							<button class="submit-btn">SIGN UP</button>
+						</form>
+					</div>
+				</div>
+			</div>
+	</div>
+</body>
+</html>

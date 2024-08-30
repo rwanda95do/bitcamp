@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body{
+	margin: 0;
+	padding: 0;
+	
+}
+.container{
+	background: blue;
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+}
+.main {	
+	width: 70%;
+	background: red;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+		hhhh
+		</div>
+	</div>
+</body>
+</html>

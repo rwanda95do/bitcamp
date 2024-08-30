@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<style type="text/css">
+:root {
+	--highlight: #de6262;
+	--darkColor: #2c2b26;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: "Montserrat", sans-serif;
+	font-size: 100%;
+}
+a {
+	transition: all 0.3s ease-in-out;
+}
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+.centered-container {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+}
+#slider-intro, .user-forms {
+	display: table-cell;
+	width: 50%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#slider-intro {
+	background: var(--highlight);
+	overflow: hidden;
+}
+#slider-intro img {
+	position: absolute;
+	height: 110%;
+	width: 110%;
+	-webkit-filter: blur(40px);
+	top: -5%;
+	left: -5%;
+}
+#slider-intro .filter {
+	position: absolute;
+	top: 0;
+	display: none;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(222, 98, 98, 0.75); /* rgba에서 색상 값으로 변환 */
+}
+.user-forms {
+	background: var(--darkColor);
+}
+
+.user-forms h2 {
+	text-align: center;
+	color: #3e3a36; /* lighten(#2c2b26, 10) 색상 값으로 변환 */
+	font-weight: normal;
+	letter-spacing: 0.0326em;
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+.user-forms h2 span {
+	cursor: pointer;
+}
+.user-forms h2 .selected-login {
+	color: white;
+	border-bottom: 1px solid var(--highlight);
+}
+
+/* 회원가입 안보임*/
+.user-forms .user-regist {
+	display: none;
+}
+label, input[type="password"], input[type="text"], input[type="email"] {
+	display: block;
+	width: 100%;
+}
+
+label {
+	color: white;
+	font-size: 0.85em;
+	font-weight: normal;
+}
+input[type="password"], input[type="text"], input[type="email"] {
+	border: none;
+	background: none;
+	border-bottom: 1px solid #3e3a36; /* lighten(#2c2b26, 10) 색상 값으로 변환 */
+	margin-bottom: 40px;
+	padding: 10px 0;
+	color: var(--highlight);
+	font-size: 1em;
+	transition: border 0.45s ease-in-out;
+}
+input[type="password"]:focus, input[type="text"]:focus, input[type="email"]:focus
+	{
+	box-shadow: none;
+	outline: none;
+	border-color: var(--highlight);
+}
+
+.submit-btn {
+	background: transparent;
+	border: 1px solid white;
+	width: 75%;
+	padding: 10px 0;
+	margin: 0 12.5%;
+	color: white;
+	position: relative;
+	transition: all 0.45s ease-in-out;
+}
+.submit-btn:hover {
+	background: var(--highlight);
+	color: white;
+	border-color: var(--highlight);
+}
+.inline-label {
+	display: initial;
+	margin-bottom: 30px;
+}
+
+/**/
+.misc-links {
+	color: #1f1f1f; /* lighten(#2c2b26, 25) 색상 값으로 변환 */
+	margin-top: 30px;
+	display: block;
+	text-align: center;
+	font-size: 0.725em;
+	font-style: italic;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container">
+		<div id="slider-intro">
+			<div class="glide__wrapper">
+				<img
+					src="http://i65.photobucket.com/albums/h235/Ignwar/Album%20Trees/AlmondTreeAntelopeValleyCalifornia.jpg"
+					alt="" />
+			</div>
+			<div class="user-forms">
+				<div class="centered-container">
+					<h2 id="select-form">
+						<span class="selected-login" data-user-form="user-login">User
+							Login</span> or <span data-user-form="user-regist">User
+							Registration</span>
+					</h2>
+					<div class="user-login user-form">
+						<form id="user-login">
+							<label for="user-name">User Name</label> <input type="text"
+								id="user-name" placeholder="Enter User Name" /> <label
+								for="user-pass">User Password</label> <input type="password"
+								id="user-pass" placeholder="Enter Password" />
+							<button class="submit-btn">LOGIN</button>
+							<a href="#" class="misc-links">Forgot Password?</a>
+						</form>
+					</div>
+					<div class="user-regist user-form">
+						<form id="user-regist">
+							<label for="regist-name">Name</label> <input type="text"
+								id="regist-name" placeholder="Enter Name" /> <label
+								for="regist-usr">User Name</label> <input type="text"
+								id="regist-usr" placeholder="Enter Username" /> <label
+								for="regist-email">Email</label> <input type="email"
+								id="regist-email" placeholder="Enter Email" /> <label
+								for="regist-pass">Password</label> <input type="password"
+								id="regist-pass" placeholder="Enter New Password" /> <input
+								type="checkbox" id="understood-terms" /> <label
+								for="understood-terms" class="inline-label">I understood
+								and agree with the terms and conditions.</label> <br />
+							<br />
+							<br />
+							<button class="submit-btn">SIGN UP</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/2.0.9/glide.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#select-form span').on('click', function() {
+			el = $(this);
+			showForm = el.data('user-form');
+			el.toggleClass('selected-login');
+			$('.user-form').fadeOut('fast');
+			$("." + showForm).delay(500).fadeIn();
+			$('#select-form span').not(el).removeClass('selected-login')
+		})
+	})();
+</script>
+</html>
