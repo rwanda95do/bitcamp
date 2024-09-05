@@ -128,4 +128,33 @@ public class GuestbookDAO {
 		System.out.println(sql);
 		return list;
 	}
+
+	public int getTotal() {
+		getConnection();
+		
+		int totalA = 0;
+		
+		String sql = "select count(*) from guestbook";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			rs.next();	// 다음으로 이동 + 현재 위치에 데이터가 있는지 확인 
+			totalA = rs.getInt(1);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return totalA;
+	}
 }

@@ -1,9 +1,0 @@
-<%@ page language="java" contentType="text/xml; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true" %>		<%--xml 태그는 자기보다 앞에 뭐가 있으면 에러냄.. → xml태그 시작전의 모든 공백 제거 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<c:set var="result" value="false"/>
-<c:if test="${param.user_id == 'hong'}">
-	<c:set var="result" value="true"/>
-</c:if>

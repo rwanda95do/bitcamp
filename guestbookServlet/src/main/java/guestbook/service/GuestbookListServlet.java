@@ -22,6 +22,8 @@ public class GuestbookListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	// 데이터 받기
 		int page = Integer.parseInt(request.getParameter("page"));
+		System.out.println(page);
+		
 		// 한페이지에 3개의글을 뿌리겠다.
 		int endNum = page * 3;
 		int startNum = endNum - 2;
@@ -30,12 +32,21 @@ public class GuestbookListServlet extends HttpServlet {
 		GuestbookDAO guestbookDAO = GuestbookDAO.getInstance(); // 싱글톤
 		List<GuestbookDTO> list = guestbookDAO.guestbookList(startNum, endNum);
 		
-		// 총 글수 
-		//int tatalA = guestbookDAO.getTotal();
+		// 페이지 :  총 글수 
+		int totalA = guestbookDAO.getTotal();
+		int totalP = (totalA + 2) / 3;		//(totoalA / 3) + (totalA % 3);
 		
 	// 응답 : 뿌리기
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<style>");
+		out.println("#currentPaging{ color:red; text-decoration:underline}");
+		out.println("#paging{ color:black; text-decoration:none}");
+		out.println("</style>");
+		out.println("<body>");
+		
+		
 		
 		if(list != null) {
 			for (GuestbookDTO data : list) {
@@ -77,15 +88,26 @@ public class GuestbookListServlet extends HttpServlet {
 			</table>
 			<br>
 				""");
-				
 			} // for	
-		}
+		} // 리스트 출력
 
 		out.println("<input type='button' value='뒤로' onclick=history.go(-1)>");
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		
+		// 페이지
+		System.out.println(totalA + ", " + totalP);
+		out.println("<br>");
+		for(int i=1; i<=totalP; i++) {
+			if(i == page) {
+				out.println("[<a id='currentPaging' href='/guestbookServlet/List?page="+i+"'>" + i + "</a>]");				
+			} else {
+				out.println("[<a id='paging' href='/guestbookServlet/List?page="+i+"'>" + i + "</a>]");
+			}
+			
+		}
+		
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 }
