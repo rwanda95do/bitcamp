@@ -25,9 +25,8 @@ div {
 </style>
 </head>
 <body>
-<h1>
-	<img alt="home" src="../image/1.jpg" onclick="location.href='../index.jsp'" style="cursor: pointer;">
-</h1>
+<img alt="home" src="../image/1.jpg" onclick="location.href='../index.jsp'" style="cursor: pointer;">
+<h1>회원가입</h1>
 <form name="memberWriteForm" method="post" action="memberWrite.jsp">
 	<table border="1" cellspacing="0" cellpadding ="5">
 		<tr>

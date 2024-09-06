@@ -22,4 +22,14 @@ addr1 varchar2(100),
 addr2 varchar2(100),
 logtime date);
 
+-- -----------------------
 select * from member;
+
+-- -----------------------
+insert into member(name, id, pwd) VALUES ('홍길동', 'hong', '111');
+select * from member where id='fff';
+select name from member where id='hong' and pwd='111';
+update member 
+set name='홍길동', pwd='111', gender='1', email1='hong', email2='gmail.com', tel1='011', tel2='4312', tel3='4325', zipcode='54721', addr1='대한민국', addr2='어딘가', logtime=sysdate
+where id='hong';
+commit;

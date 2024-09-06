@@ -27,6 +27,7 @@ div {
 <body>
 	<h1>
 		<img alt="home" src="../image/1.jpg" onclick="location.href='../index.jsp'" style="cursor: pointer;">
+		
 	</h1>
 	<form name="memberLoginForm" >
 		<table border="1" cellspacing="0" cellpadding ="5">

@@ -1,3 +1,4 @@
+// javascript
 // 우편번호 
 function checkPost() {
     new daum.Postcode({
@@ -65,6 +66,8 @@ function memberWrite(){
 	}else {document.memberWriteForm.submit();}
 }
 
+
+// 로그인
 function memberLogin(){
 	if(document.getElementById("id").value==""){
 		document.getElementById("check").innerHTML="아이디를 입력해주세요";
@@ -74,4 +77,31 @@ function memberLogin(){
 }
 
 
+// ----------------------------------
 
+// 회원 정보 수정 [JQuery]
+$('#updateBtn').click(function(){
+	$('#nameDiv').empty;
+	$('#pwdDiv').empty;
+	
+	if($('#name').val()==''){
+		$('#nameDiv').html('이름입력');
+	} else if($('#pwd').val()==''){
+		$('#pwdDiv').html('비밀번호입력')
+	} else if($('#pwd').val() != $('#repwd').val()){
+		$('#pwdDiv').html('비밀번호가 다름니다')
+	} else {
+		$.ajax({
+			type: "post",
+			url: "update.jsp",
+			data: $('form[name="updateForm"]').serialize(),	// name=값&id=값&..
+			success: function() {
+				alert("회원정보가 수정되었습니다.");
+				location.href="../index.jsp";
+			} ,
+			error: function(e) {
+				console.log(e);
+			}
+		});
+	}
+});

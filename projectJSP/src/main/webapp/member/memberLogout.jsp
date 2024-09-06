@@ -4,7 +4,8 @@
     
     
 <%
-// 쿠키
+/*
+// 1. 쿠키
 	Cookie[] ar = request.getCookies();
 
 	if(ar != null) { // 쿠키값이 있다면 로그아웃시켜라
@@ -20,7 +21,13 @@
 			}
 		}
 	}
+*/
 
+// 2. 세션
+	session.removeAttribute("memName");
+	session.removeAttribute("memId");
+	
+	// session.invalidate();  // 한번에 모든 세션을 지울때 
 %>
 <!DOCTYPE html>
 <html>
@@ -30,5 +37,13 @@
 </head>
 <body>
 
+
 </body>
+<script type="text/javascript">
+window.onload = function() {
+	alert("로그아웃");
+	location.href = "../index.jsp";
+}
+
+</script>
 </html>
