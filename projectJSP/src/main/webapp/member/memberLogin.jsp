@@ -45,6 +45,8 @@ if(name==null){
 	session.setAttribute("memId", id);	// 세션생성
 	session.setAttribute("memName", name);	// 세션생성
 	session.setAttribute("memEmail", email);
+	
+	// session.setAttribute("memDTO", memberDTO);
 
 // 페이지 이동
 	response.sendRedirect("loginOk.jsp");

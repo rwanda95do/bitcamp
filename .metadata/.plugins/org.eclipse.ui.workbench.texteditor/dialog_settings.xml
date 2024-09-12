@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="addr2"/>
+		<item key="selection" value="forward"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="forward"/>
+			<item value="for"/>
+			<item value="\"/>
+			<item value="map"/>
 			<item value="sample6_detailAddress"/>
 			<item value="sample6_address"/>
 			<item value="sample6_postcode"/>
@@ -19,12 +23,9 @@
 			<item value="user-form"/>
 			<item value="inline-label"/>
 			<item value="selected-login"/>
-			<item value="slider-intro"/>
-			<item value="data-user-form"/>
-			<item value="user-regist"/>
-			<item value="glide__wrapper"/>
 		</list>
 		<list key="replacehistory">
+			<item value="/"/>
 			<item value="addr2"/>
 			<item value="addr1"/>
 			<item value="zipcode"/>
@@ -40,7 +41,7 @@
 		<item key="DIALOG_Y_ORIGIN" value="198"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-38"/>
+		<item key="DIALOG_X_ORIGIN" value="8"/>
 		<item key="DIALOG_Y_ORIGIN" value="367"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>

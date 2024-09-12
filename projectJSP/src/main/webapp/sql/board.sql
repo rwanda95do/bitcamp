@@ -25,3 +25,22 @@ CREATE SEQUENCE seq_board NOCACHE NOCYCLE;
 select * from board;
 -- ---------------------------------------
 
+-- 글 작성(원글)
+insert into board(seq, id, name, email, subject, content, ref) 
+values(seq_board.nextval, 'sim', '심슨', 'sim@gmail.com', '심슨이 적은글', '딱히 적는 이유는 없습니다.', seq_board.nextval);
+
+-- 답글용
+insert into board(seq, id, name, email, subject, content, ref, step) 
+values(seq_board.nextval, 'sim', '심슨', 'sim@gmail.com', '심슨이 적은글', '딱히 적는 이유는 없습니다.', 2, 1);
+commit;
+
+
+-- 글 목록 
+select * from
+(select rownum rn, tt.*from
+(select * from board order by ref desc, step asc)tt
+)where rn >=1 and rn<=5;
+
+select * from board order by ref desc, step asc;
+
+select count(*) from board;    --총글수
