@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 		initParams = {
 				@WebInitParam(name = "propertyConfig", value = "command.properties")
 		}
-		)
+	)
 public class ControlServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> map = new HashMap<String, Object>();
@@ -64,12 +64,12 @@ public class ControlServlet extends HttpServlet {
              String key = (String)it.next();
              System.out.println("key = "+key);
 
-             String className = properties.getProperty(key);
+             String className = properties.getProperty(key); // className은 그냥 " "안에 담긴 문자열
              System.out.println("className = "+className);
 
              try {
-                Class<?> classType = Class.forName(className);
-                Object ob = classType.getConstructor().newInstance();
+                Class<?> classType = Class.forName(className);  // className의 자료형을 모르니까 Class<?> 클래스타입(자료형)으로 일단 보내
+                Object ob = classType.getConstructor().newInstance();  // className을 생성해!!
 
                 System.out.println("ob = "+ob);
 
@@ -124,10 +124,12 @@ public class ControlServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		if(view.equals("none")) {return;}
 		
 		// forward
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
+		
 		
 	}
 }

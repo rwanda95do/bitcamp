@@ -75,7 +75,7 @@ public class MemberDAO {
 		MemberDTO memberDTO = null;
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		memberDTO = sqlSession.selectOne("memberSQL.getMember", memberDTO);
+		memberDTO = sqlSession.selectOne("memberSQL.getMember", id);
 		sqlSession.close();
 
 		return memberDTO;

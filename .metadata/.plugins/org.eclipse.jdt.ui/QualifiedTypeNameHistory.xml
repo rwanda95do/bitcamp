@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="user.main.UserMain"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
-    <fullyQualifiedTypeName name="member.dto.MemberDTO"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
     <fullyQualifiedTypeName name="java.io.Reader"/>
@@ -51,6 +50,8 @@
     <fullyQualifiedTypeName name="java.lang.reflect.InvocationTargetException"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebInitParam"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.control.CommandProcess"/>
+    <fullyQualifiedTypeName name="member.dto.MemberDTO"/>
     <fullyQualifiedTypeName name="member.dao.MemberDAO"/>
 </qualifiedTypeNameHistroy>

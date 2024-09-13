@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="registerDAO"/>
 			<item value="forward"/>
 			<item value="for"/>
 			<item value="\"/>
@@ -22,7 +23,6 @@
 			<item value=".centered-container"/>
 			<item value="user-form"/>
 			<item value="inline-label"/>
-			<item value="selected-login"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/"/>

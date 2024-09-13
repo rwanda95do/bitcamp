@@ -20,10 +20,7 @@ public class CheckIdService implements CommandProcess{
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		boolean exist = memberDAO.isExistID(id);
 		
-		System.out.println(exist);
-		
-		request.setAttribute("exist",exist);
-		request.setAttribute("id", id);
+		request.setAttribute("exist", exist); //request는 서블릿꺼 이게 forward되서 jsp까지 갈 예정
 		
 		return "/member/checkId.jsp";			
 		

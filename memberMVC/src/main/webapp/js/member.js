@@ -93,11 +93,11 @@ $('#updateBtn').click(function(){
 	} else {
 		$.ajax({
 			type: "post",
-			url: "update.jsp",
+			url: '/memberMVC/member/update.do',
 			data: $('form[name="updateForm"]').serialize(),	// name=값&id=값&..
 			success: function() {
 				alert("회원정보가 수정되었습니다.");
-				location.href="../index.jsp";
+				location.href="/memberMVC/index.do";
 			} ,
 			error: function(e) {
 				console.log(e);
@@ -107,25 +107,26 @@ $('#updateBtn').click(function(){
 });
 
 
-
+// focusout 아이디 중복체크
 $("#id").focusout(function(){
 	$('#idDiv').empty();
+	let id = $('#id').val();
 	
-	let id = document.getElementById('id').value;
-	if(id==""){
-		document.getElementById('idDiv').innerHTML="아이디를 입력해주세요";
+	if(id==''){
+		$('#idDiv').html('아이디를 입력해주세요');
 	}else {
 		$.ajax({
 			type: "post",
 			url: "/memberMVC/member/checkId.do",
-			data: {"id":id},	// name=값&id=값&..
+			data: {"id":id},	// name=값&id=값&.. 'id='+id
 			success: function(data) {
-				if(data){
-					document.getElementById('idDiv').innerHTML="사용 불가능한 아이디입니다";				
+				alert(data.trim());
+				if(data.trim() == 'exist'){
+					$('#idDiv').html('사용 불가능한 아이디입니다').css('color','red');				
 				} else{
-					document.getElementById('idDiv').innerHTML="사용 가능한 아이디입니다.";					
+					$('#idDiv').html('사용 가능한 아이디입니다').css('color','blue');
+					$('#check').val(id);					
 				}
-				location.href="../index.jsp";
 			} ,
 			error: function(e) {
 				console.log(e);

@@ -25,9 +25,9 @@ div {
 </style>
 </head>
 <body>
-<img alt="home" src="../image/1.jpg" onclick="location.href='../index.jsp'" style="cursor: pointer;">
+<img alt="home" src="../image/1.jpg" onclick="location.href='/memberMVC/index.do'" style="cursor: pointer;">
 <h1>회원가입</h1>
-<form name="memberWriteForm" method="post" action="memberWrite.jsp">
+<form name="memberWriteForm" method="post" action="/memberMVC/member/write.do">
 	<table border="1" cellspacing="0" cellpadding ="5">
 		<tr>
 			<th width="100px">이름</th>
@@ -40,7 +40,7 @@ div {
 			<th>아이디</th>
 			<td>
 				<input type="text" id="id" class="id" name="id" placeholder="아이디 입력" size="30">
-				<button type="button" onclick="javascript:checkId()">중복체크</button>
+				<input type="button" onclick="javascript:checkId()" />
 				<input type="text" id="check" value="">
 				<div id="idDiv"></div>
 			</td>
@@ -110,8 +110,8 @@ div {
 		</tr>
 	</table>
 </form>
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="../js/member.js"></script>
 	
 </body>
