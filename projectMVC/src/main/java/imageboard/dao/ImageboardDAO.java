@@ -41,15 +41,9 @@ public class ImageboardDAO {
 		
 	}
 
-	public List<ImageboardDTO> imageboardList(int startNum, int endNum) {
-		List<ImageboardDTO> list = new ArrayList<ImageboardDTO>();
-		
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("startNum", startNum);
-		map.put("endNum", endNum);
-		
+	public List<ImageboardDTO> imageboardList(Map<String, Integer> map) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		sqlSession.selectList("imageboardSQL.imageboardList",map);
+		List<ImageboardDTO> list = sqlSession.selectList("imageboardSQL.imageboardList",map);
 		sqlSession.close();
 		
 		return list;
